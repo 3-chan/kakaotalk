@@ -1,0 +1,230 @@
+:root {
+  /* Color */
+  --black-color: #1a1a1a;
+  --red-color: #e05f44;
+  --white-color: #fefefe;
+  --grey-dark-color: #afafaf;
+  --grey-light-color: #fbfbfb;
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 48px;
+
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white-color);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: calc(var(--padding) * 1.5);
+}
+
+.category {
+  color: var(--black-color);
+  font-size: calc(var(--font-large) * 1.5);
+  font-weight: bold;
+}
+
+.icons ul {
+  list-style: none;
+  display: flex;
+  font-size: calc(var(--font-large) * 1.5);
+}
+
+.icons ul li {
+  margin-right: calc(var(--padding) * 1.5);
+}
+
+.icons ul li:nth-child(4) {
+  margin-right: 0;
+}
+
+/* My Profile */
+.myProfile {
+  display: flex;
+  align-items: center;
+  padding: 0 calc(var(--padding) * 1.5);
+}
+
+.myProfile .avatar {
+  margin-right: var(--padding);
+}
+
+.myProfile .avatar img {
+  width: calc(var(--avatar-size) * 1.5);
+  height: calc(var(--avatar-size) * 1.5);
+  object-fit: cover;
+  border-radius: 40%;
+}
+
+.myProfile .name {
+  color: var(--black-color);
+  font-size: var(--font-large);
+  font-weight: bold;
+  padding-bottom: calc(var(--padding) / 3);
+}
+
+/* Birth & Bookmark & Channel & Friends */
+.birthFriends + .bookmarks + .channel + .friends {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleAndBtn {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding) calc(var(--padding) * 1.5);
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.titleAndBtn .moreBtn {
+  border: none;
+  outline: none;
+  background-color: var(--white-color);
+  color: var(--grey-dark-color);
+}
+
+.titleAndBtn .moreBtn.clicked {
+  transform: rotate(180deg);
+}
+
+.friendsList {
+  list-style: none;
+  display: none;
+}
+
+.friendsList.active {
+  display: flex;
+}
+
+.friendsList .profile {
+  display: flex;
+  align-items: center;
+  padding: 0 calc(var(--padding) * 1.5);
+}
+
+.friendsList .profile .avatar {
+  margin-right: var(--padding);
+}
+
+.friendsList .profile .avatar img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  object-fit: cover;
+  border-radius: 40%;
+}
+
+.friendsList .profile .name {
+  color: var(--black-color);
+  font-size: var(--font-large);
+  padding-bottom: calc(var(--padding) / 3);
+}
+
+/* Footer */
+.nav_bar {
+  background-color: var(--grey-light-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: var(--padding);
+}
+
+.nav_bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-size: calc(var(--font-large) * 1.5);
+}
+
+a,
+a:visited {
+  /* text-decoration: none; */
+  color: var(--black-color);
+}
+
+/* chat.html */
+/* chat */
+
+.chatList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding);
+}
+
+.chatList .info {
+  display: flex;
+  margin: var(--padding) 0;
+  align-items: center;
+}
+
+.chatList .info .avatar {
+  margin-right: var(--padding);
+}
+
+.chatList .info .avatar img {
+  width: calc(var(--avatar-size) * 1.3);
+  height: calc(var(--avatar-size) * 1.3);
+  object-fit: cover;
+  border-radius: 40%;
+}
+
+.chatList .info .nameAndMessage {
+  display: flex;
+  flex-direction: column;
+  margin-right: var(--padding);
+}
+
+.chatList .info .nameAndMessage .name {
+  font-size: var(--font-large);
+  font-weight: 550;
+  color: var(--black-color);
+}
+
+.chatList .info .nameAndMessage .message {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.chatList .info .timeAndNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 200px;
+  text-align: center;
+}
+
+.chatList .info .timeAndNumber .time {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.chatList .info .timeAndNumber .number {
+  width: var(--font-large);
+  height: var(--font-large);
+  font-size: var(--font-small);
+  color: var(--white-color);
+  background-color: var(--red-color);
+  border-radius: 50%;
+  margin-top: calc(var(--padding) / 2);
+}
